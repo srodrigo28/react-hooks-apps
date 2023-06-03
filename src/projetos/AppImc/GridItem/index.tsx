@@ -17,6 +17,11 @@ export const GridItem = ( { item } : Props) => {
             <div className={b.gridTitle}>
                 {item.title}
             </div>
+
+            {item.youtImc &&
+                <div className={b.yourImc}>Seu IMC é de {item.youtImc.toFixed(1)} Kg</div>
+            }
+
             <div className={b.gridInfo}>
                 <>
                     IMC está entre <strong>{item.imc[0]}</strong> e <strong> {item.imc[1]} </strong>

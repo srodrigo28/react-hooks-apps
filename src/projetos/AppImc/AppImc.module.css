@@ -57,12 +57,49 @@
 .container .rightSide{
     width: 100%;
     margin-right: 40px;
-
     display: flex;
-
     & .grid{
         gap: 20px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
+    & .rightBig{
+        flex: 1;
+        display: flex;
+    }
+    & .rightArrow{
+        flex: 1;
+        display: flex;
+    }
+    & .rightArrow{
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        display: flex;
+        cursor: pointer;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        background-color: #227C9D;
+
+        margin-top: 148px;
+        margin-left: -35px;
+        transition: 2s ease-in-out;
+    }
+    & .rightArrow:hover{
+        color: white;
+        background-color: red;
+        /* animation: Girar 2s; */
+        transform: rotateY(360deg);
+
+    }
+}
+
+@keyframes Girar {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
