@@ -40,15 +40,21 @@ export function AppImc() {
                         type="number"
                         placeholder="Digite a sua altura. Ex: 1.5 (em métros)"     
                         value={ heightField > 0 ? heightField : '' }
-                        onChange={ (e) => setHeightField(parseFloat(e.target.value))}
+                        onChange={(e) => setHeightField(parseFloat(e.target.value))}
+                        disabled={toShow ? true : false}
                     />
                     <input
                         type="number"
                         placeholder="Digite o seu peso. Ex: 1.5 (em kg)"     
                         value={ wightField > 0 ? wightField : '' }
-                        onChange={ (e) => setWightField(parseFloat(e.target.value))}
+                        onChange={(e) => setWightField(parseFloat(e.target.value))}
+                        disabled={toShow ? true : false}
                     />
-                    <button onClick={handleCalculateButton}>Calcular</button>
+                    <button
+                        onClick={handleCalculateButton}
+                        disabled={toShow ? true : false}
+                    >Calcular</button>
+                    
                 </div>
                 <div className={a.rightSide}>
                     {!toShow && 

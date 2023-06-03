@@ -34,8 +34,11 @@
         border-bottom: 2px solid rgba(150, 163, 171, .5);
     }
     & input:hover, input:focus{
-        font-size: 30px;
+        font-size: 20px;
     }
+    & input:disabled {
+        opacity: .7;
+    };
     & button {
         background-color: #227C9D;
         color: #fff;
@@ -52,6 +55,11 @@
         color: #000;
         font-weight: bold;
         opacity: .7;
+    }
+    & button:disabled{
+        color: #fff;
+        font-weight: 100;
+        opacity: 1;
     }
 }
 .container .rightSide{
@@ -94,7 +102,47 @@
 
     }
 }
+@media (max-width: 770px){
+    header{
+        padding: 0 20px;
+    }
+    .container{
+        font-size: 0.7em;
+        padding: 0 20px;
+        flex-direction: column;
+    }
+    .container .leftSide{
+        margin-right: 0;
 
+        & h1{
+            margin-top: -30px;
+            font-size: 2.5em;
+        }
+        & p{
+            font-size: 1.8em;
+        }
+        & input{
+            margin-top: -30px;
+        }
+    }
+    .container .rightSide{
+        margin-right: 0;
+        margin-top: 20px;
+    }
+    .container .rightSide .rightArrow{
+        margin-left: -30px;
+        margin-top: 0;
+    }
+    .container .rightSide .grid{
+        grid-template-columns: 1fr;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+}
 @keyframes Girar {
 	0% {
 		transform: rotate(0);
