@@ -102,7 +102,9 @@
 
     }
 }
+
 @media (max-width: 770px){
+
     header{
         padding: 0 20px;
     }
@@ -143,6 +145,29 @@
     }
 
 }
+
+@media (max-width: 800px){
+    header{
+        background-color: yellow;
+        padding-left: 20px;
+    }
+    .container{
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 770px){
+    
+    header{
+        background-color: red;
+        padding-left: 20px;
+    }
+    .container{
+        padding-left: 20px;
+    }
+}
+
+
 @keyframes Girar {
 	0% {
 		transform: rotate(0);
