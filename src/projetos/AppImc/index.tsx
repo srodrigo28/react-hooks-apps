@@ -1,6 +1,8 @@
 import a from './AppImc.module.css'
 import poweredImage from './../../assets/imc/powered.png';
 import { useState } from 'react';
+import { Level, calculeteImc, levels } from './imc'
+import { GridItem } from './GridItem';
 
 export function AppImc() {
     const [heightField, setHeightField] = useState<number>(0);
@@ -45,9 +47,15 @@ export function AppImc() {
                     <button onClick={handleCalculateButton}>Calcular</button>
 
                 </div>
+
                 <div className={a.rightSide}>
-                    ...
+                    <div className={a.grid}>
+                        { levels.map((item, key) => (
+                            <GridItem key={key} item={item} />
+                        ))}
+                    </div>
                 </div>
+
             </div>
         </div>
     )
