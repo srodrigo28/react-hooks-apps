@@ -1,6 +1,10 @@
 # Projetos & Hooks Revisões
 * Referências
 ```
+https://alunos.b7web.com.br/curso/reactjs/enviando-requisicoes-post-2
+```
+
+```
 https://alunos.b7web.com.br/curso/reactjs/react-imc-calculando-o-imc
 ```
 
