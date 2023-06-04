@@ -13,11 +13,16 @@ export function Get4() {
         loadMovies();
     },[])
     const loadMovies = async () => {
-        setLoading(true);
-            let response = await fetch(url)
-            let json = await response.json()
-        setLoading(false);
-        setMovies(json)
+        try {
+            setLoading(true);
+                let response = await fetch(url)
+                let json = await response.json()
+            setLoading(false);
+            setMovies(json)
+        } catch (e) {
+            setLoading(false);
+            console.error(e);
+        }
     }
     return (
         <div>
@@ -37,6 +42,9 @@ export function Get4() {
                         ))}
                     </div>
                 </>
+            }
+            {!loading && movies.length === 0 &&
+                <div>Servidor sem serviço :( </div>
             }
         </div>
     )
