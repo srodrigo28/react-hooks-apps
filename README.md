@@ -13,21 +13,22 @@ https://alunos.b7web.com.br/curso/reactjs/memoria-introducao-ao-projeto
 https://alunos.b7web.com.br/curso/reactjs/react-usando-useeffect-na-pratica
 ```
 
-* Uuid
+# Instalando e usando UUIDV4
+* uuid e types
 ```
-npm i uuid
+npm i --save-dev uuid @types/uuid
 ```
-* Uuid Types
-```
-npm i --save-dev @types/uuid
-```
+
 * Importar no arquivo
+```
 import {v4 as uuidv4} from 'uuid';
+```
 
 * criar variavel a receber
 ```
 const id = uuidv4();
 ```
+
 * Exemplo Usando map com uuid
 ```
 <div>
