@@ -1,10 +1,10 @@
-import { Get5 } from "./Get5"
+import { Get6 } from "./Get6"
 
 function App() {
   return (
     <>   
       <header className="headerContainer">
-        <Get5 />
+        <Get6 />
       </header>
     </>
   )

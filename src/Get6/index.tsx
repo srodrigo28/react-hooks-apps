@@ -1,13 +1,24 @@
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { Posts } from "./Post";
 import {v4 as uuidv4} from 'uuid';
 
-export function Get5() {
+export function Get6() {
     const id = uuidv4();
     const url = "https://jsonplaceholder.typicode.com/posts"
     
     const [posts, setPosts] = useState<Posts[]>([])
     const [loading, setLoading] = useState(false)
+
+    const [addTitle, setTitle] = useState<string>('')
+    const [addBody, setBody] = useState<string>('')
+
+    const handleAddBodyChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+        setBody(e.target.value);
+    }
+
+    const handleAdicionarPost = () => {
+        alert("Titulo: " + addTitle + "Titulo: " + addBody);
+    }
 
     useEffect(() => {
         loadPosts();
@@ -26,11 +37,35 @@ export function Get5() {
     }
     return (
         <div>
-            <h1>Get 5 usando Place Holder</h1>
+            <h1>Get 6 Post Input usando Place Holder</h1>
             {loading &&
                 <div>Carregando ...</div>
                 
             }
+
+            <fieldset className="form">
+                <legend>Adicionar Novo Post</legend>
+
+                <input
+                    type="text"
+                    value={addTitle}
+                    placeholder="Digite um título"
+                    onChange={(e) => setTitle(e.target.value)}
+                />
+                <br />
+                <textarea
+                    name=""
+                    value={addBody}
+                    onChange={handleAddBodyChange}
+                    placeholder="Texto a adicionar"
+                >
+                    
+                </textarea>
+                <br />
+                <button onClick={handleAdicionarPost}>Adicionar</button>
+
+            </fieldset>
+
             {!loading && posts.length > 0 &&
                 <>
                     <p>Total de Posts: {posts.length} </p>
