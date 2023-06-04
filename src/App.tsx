@@ -1,10 +1,10 @@
-import { AppImc } from "./projetos/AppImc"
+import { Effect2 } from "./hooks/Effect2"
 
 function App() {
   return (
     <>   
       <header className="headerContainer">
-        <AppImc />
+        <Effect2 />
       </header>
     </>
   )
