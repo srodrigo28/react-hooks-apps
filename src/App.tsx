@@ -1,10 +1,10 @@
-import { Effect2 } from "./hooks/Effect2"
+import { Get } from "./Get"
 
 function App() {
   return (
     <>   
       <header className="headerContainer">
-        <Effect2 />
+        <Get />
       </header>
     </>
   )

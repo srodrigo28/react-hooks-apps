@@ -19,7 +19,6 @@ export function Effect2() {
     useEffect(() => {
         setFullName(`${name} ${lastName}`)
     }, [name, lastName])
-    
     return (
         <div className="container">
             <h1>Aula useEffect 02</h1>
