@@ -1,5 +1,6 @@
 import { useReducer } from "react";
 import { v4 as uid } from "uuid"
+
 type Person = {
     id: string;
     name: string;
@@ -7,7 +8,7 @@ type Person = {
 
 type ActionType = {
     type: string;
-    payload?: {
+    payload: {
         name?: string;
         id?: string;
     }
@@ -29,14 +30,13 @@ const reducer = ( state: Person[], action: ActionType ) => {
         break
         case 'DEL':
             if(action.payload?.id){
-                state = state.filter(item => item.id !== action.payload?.id);
+                let newState = [...state];
+                newState =  newState.filter(item => item.id !== action.payload?.id);
+                return newState
             }
-        break
-        case 'ORDER':
-            state = state.sort((a,b) => (a.name > b.name) ? 1 : -1);
-        break
+        break;
     }
-    return state
+    return state;
 }
 
 export const usePeoopleList = () => {

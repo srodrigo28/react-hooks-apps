@@ -16,6 +16,12 @@ export function Reducer3(){
         }
         // alert('Adicionado com sucesso!')
     }
+    const handleRemove = (id: string) => {
+         dispatch({
+            type: 'DEL',
+            payload:{ id }
+         })
+    }
     return(
         <div>
             <h1>Reducer 3</h1>
@@ -30,9 +36,17 @@ export function Reducer3(){
             
             <div>
                 <p>Lista de pessoas: </p>
-                
+
                 {list.map((item, index) => (
-                    <div key={index}> {item.id} - {item.name}</div>    
+                    <div 
+                        key={index}> 
+                        {item.id}
+                        {item.name}
+                        <button
+                            onClick={ () => handleRemove(item.id)}>
+                        X
+                        </button>
+                    </div>    
                 ))}
             </div>
         </div>
