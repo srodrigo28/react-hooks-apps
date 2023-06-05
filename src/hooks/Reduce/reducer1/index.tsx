@@ -3,13 +3,10 @@ import { useReducer } from "react"
 type reducerState = {
     count: number;
 }
-
 type reduceAction = {
     type: string;
 }
-
 // const valor = 2;
-
 const initialState = { count: 0 };
 
 const reducer1 = (state: reducerState, action: reduceAction) => {
@@ -20,7 +17,7 @@ const reducer1 = (state: reducerState, action: reduceAction) => {
         break;
         case "DEL":
             // return { count: state.count -= valor };
-            return { ...state, count: state.count + 1 };
+            return { ...state, count: state.count - 1 };
         break;
         case "RESET":
             return initialState;
@@ -30,14 +27,17 @@ const reducer1 = (state: reducerState, action: reduceAction) => {
         break;
     }
 }
-
 export function Reducer1(){
     
     const [state, dispatch] = useReducer(reducer1, initialState)
     
     return(
         <div>
-
+            Contagem: {state.count}
+            <hr />
+            <button onClick={ () => dispatch( { type: "ADD" }) }>+</button>
+            <button onClick={ () => dispatch( { type: "DEL" }) }>-</button>
+            <button onClick={ () => dispatch( { type: "RESET" }) }>RESET</button>
         </div>
     )
 }
