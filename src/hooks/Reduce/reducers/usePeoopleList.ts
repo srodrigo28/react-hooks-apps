@@ -13,10 +13,6 @@ type ActionType = {
     }
 }
 
-type reducerState = {
-
-}
-
 const initialState: Person[] = [];
 
 const reducer = ( state: Person[], action: ActionType ) => {
@@ -42,5 +38,5 @@ const reducer = ( state: Person[], action: ActionType ) => {
 }
 
 export const usePeoopleList = () => {
-
+    return useReducer(reducer, initialState)
 }
