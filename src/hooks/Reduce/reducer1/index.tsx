@@ -33,6 +33,7 @@ export function Reducer1(){
     
     return(
         <div>
+            <h1>Reducer 1</h1>
             Contagem: {state.count}
             <hr />
             <button onClick={ () => dispatch( { type: "ADD" }) }>+</button>

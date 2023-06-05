@@ -1,11 +1,11 @@
-import { Reducer1 } from "./hooks/Reduce/reducer1"
+import { Reducer2 } from "./hooks/Reduce/reducer2"
 
 function App() {
   return (
     <>   
       <header className="headerContainer">
       </header>
-      <Reducer1 />
+      <Reducer2 />
     </>
   )
 }
