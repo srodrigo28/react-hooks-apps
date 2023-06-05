@@ -16,7 +16,10 @@ https://alunos.b7web.com.br/curso/reactjs/memoria-introducao-ao-projeto
 ```
 https://alunos.b7web.com.br/curso/reactjs/react-usando-useeffect-na-pratica
 ```
-
+* React Router dom v6
+```
+ npm i --save react-router-dom @types/react-router-dom
+```
 # Instalando e usando UUIDV4
 * uuid e types
 ```
