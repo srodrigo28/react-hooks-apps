@@ -4,7 +4,7 @@ import { Posts } from "./Post";
 import { PostItem } from "./components/PostItem";
 import { api } from "./api"
 
-export function Get8() {
+export function Axios() {
     const [posts, setPosts] = useState<Posts[]>([])
     const [loading, setLoading] = useState(false)
 
@@ -33,7 +33,7 @@ export function Get8() {
     }
     return (
         <div>
-            <h1>Get 8 Post Input usando Place Holder</h1>
+            <h1>Axios Ai Place Holder</h1>
             {loading &&
                 <div>Carregando ...</div>   
             }
