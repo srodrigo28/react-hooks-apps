@@ -2,35 +2,34 @@ import { useEffect, useState } from "react";
 import { PostForm } from './components/PostForm'
 import { Posts } from "./Post";
 import { PostItem } from "./components/PostItem";
+import { api } from "./api"
 
 export function Get8() {
-    const url = "https://jsonplaceholder.typicode.com/posts"
-    
     const [posts, setPosts] = useState<Posts[]>([])
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         loadPosts();
     }, [])
+
     const loadPosts = async () => {
         try {
-            setLoading(true); //opcional
-            const response = await fetch(url)
-            const json = await response.json()
-            setLoading(false); //opcional
+            setLoading(true);
+            const json = await api.getAllPosts();
+            setLoading(false);
             setPosts(json);
         } catch (e) {
             console.error(e);
         }
     }
     const handleAddPost = async (title: string, body: string) => {
-        const response = await fetch(url, {
-            method: 'POST',
-            body: JSON.stringify({ title, body }),
-            headers: { 'Content-Type': 'application/json' },
-        });
-        const json = await response.json();
-        console.log(json);
+        const json = await api.addNewPost(title, body, 1);
+
+        if(json.id){
+            alert('Inserido com sucesso 1')
+        }else{
+            alert(' Erro não foi possível Inserir')
+        }
     }
     return (
         <div>
