@@ -12,7 +12,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
 `;
-export const Link = styled.a`
+export const ButtonBack = styled.a`
     color: white;
     background-color: white;
 `
