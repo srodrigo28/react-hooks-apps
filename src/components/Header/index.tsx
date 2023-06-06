@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Container } from "./styles";
 
 export function Header() {
@@ -5,10 +6,9 @@ export function Header() {
       <Container>
         <section>
           <nav>
-            <a href="#">Home</a>
-            <a href="#">Produtos</a>
-            <a href="#">Sobre nós</a>
-            <a href="#">Contato</a>
+            <Link to="/">Home</Link>
+            <Link to="/login">Login</Link>
+            <Link to="/register">Register</Link>
           </nav>
         </section>
       </Container>

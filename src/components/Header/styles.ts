@@ -53,4 +53,5 @@ export const Container = styled.header`
         }
       }
     }
+  }
 `;

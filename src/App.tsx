@@ -8,11 +8,11 @@ import { Header } from "./components/Header"
 function App() {
   return (
     <>
+    <Header />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/header" element={<Header />} />
       <Route path="*" element={<Page404 />} />
     </Routes>
     </>
